@@ -4,6 +4,18 @@
 
 using namespace std;
 
+namespace bg
+{
+	namespace burgas
+	{
+		struct targovska {};
+		namespace mr
+		{
+			struct pgkpi {};
+		}
+	}
+}
+
 double* foo()
 {
 	double* arr = new double(10);
@@ -19,7 +31,6 @@ struct USER
 	string email;
 	uint8_t age;
 };
-
 
 
 int main()
