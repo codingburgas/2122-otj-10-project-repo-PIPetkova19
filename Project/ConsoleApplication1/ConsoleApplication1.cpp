@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <algorithm>
 
 using namespace std;
 
@@ -33,6 +34,7 @@ struct USER
 };
 
 
+
 int main()
 {
 	vector<USER> users
@@ -42,4 +44,8 @@ int main()
 	{3, "user1", "user3@gmail.com", 18},
 	{4, "user1", "user4@gmail.com", 19}
 	};
+
+	auto sum = [](int a, int b) { return a + b; };
+	int c = sum(5, 6);
+	cout << c;
 }
