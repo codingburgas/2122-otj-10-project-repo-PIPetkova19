@@ -227,6 +227,9 @@ namespace loginForm {
 			this->pnlTerms->Name = L"pnlTerms";
 			this->pnlTerms->Size = System::Drawing::Size(727, 474);
 			this->pnlTerms->TabIndex = 11;
+			this->pnlTerms->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &MyForm::MyForm_MouseDown);
+			this->pnlTerms->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &MyForm::MyForm_MouseMove);
+			this->pnlTerms->MouseUp += gcnew System::Windows::Forms::MouseEventHandler(this, &MyForm::MyForm_MouseUp);
 			// 
 			// button3
 			// 
@@ -293,6 +296,9 @@ namespace loginForm {
 			this->Text = L"MyForm";
 			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
 			this->InputLanguageChanging += gcnew System::Windows::Forms::InputLanguageChangingEventHandler(this, &MyForm::MyForm_InputLanguageChanging);
+			this->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &MyForm::MyForm_MouseDown);
+			this->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &MyForm::MyForm_MouseMove);
+			this->MouseUp += gcnew System::Windows::Forms::MouseEventHandler(this, &MyForm::MyForm_MouseUp);
 			this->pnlTerms->ResumeLayout(false);
 			this->pnlTerms->PerformLayout();
 			this->ResumeLayout(false);
@@ -346,6 +352,28 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 private: System::Void MyForm_InputLanguageChanging(System::Object^ sender, System::Windows::Forms::InputLanguageChangingEventArgs^ e) {
 }
 private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
+}
+
+	   bool dragging;
+	   Point offset;
+private: System::Void MyForm_MouseDown(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
+	//Enable dragging and get mouse position
+	dragging = true;
+	offset.X = e->X;
+	offset.Y = e->Y;
+}
+private: System::Void MyForm_MouseMove(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
+	//Check whether we are able to move
+	if (dragging)
+	{
+		Point currentScreenPosition = PointToScreen(Point(e->X, e->Y));
+		Location = Point(currentScreenPosition.X - offset.X, currentScreenPosition.Y- offset.Y);
+	}
+}
+private: System::Void MyForm_MouseUp(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
+	//Disable dragging
+	dragging = false;
+
 }
 };
 }
