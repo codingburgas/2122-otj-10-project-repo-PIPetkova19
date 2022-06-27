@@ -128,6 +128,7 @@ namespace loginForm {
 			this->textBox1->Size = System::Drawing::Size(252, 19);
 			this->textBox1->TabIndex = 3;
 			this->textBox1->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox1_TextChanged);
+			this->textBox1->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &MyForm::textBox1_KeyDown);
 			// 
 			// panel1
 			// 
@@ -156,6 +157,7 @@ namespace loginForm {
 			this->textBox2->TabIndex = 5;
 			this->textBox2->UseSystemPasswordChar = true;
 			this->textBox2->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox2_TextChanged);
+			this->textBox2->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &MyForm::textBox2_KeyDown);
 			// 
 			// checkBox1
 			// 
@@ -222,8 +224,7 @@ namespace loginForm {
 			this->pnlTerms->Controls->Add(this->button3);
 			this->pnlTerms->Controls->Add(this->textBox3);
 			this->pnlTerms->Controls->Add(this->label5);
-			this->pnlTerms->Dock = System::Windows::Forms::DockStyle::Fill;
-			this->pnlTerms->Location = System::Drawing::Point(0, 0);
+			this->pnlTerms->Location = System::Drawing::Point(417, 33);
 			this->pnlTerms->Name = L"pnlTerms";
 			this->pnlTerms->Size = System::Drawing::Size(727, 474);
 			this->pnlTerms->TabIndex = 11;
@@ -331,6 +332,8 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	{
 		if (textBox2->Text == "0000")
 		{
+			MessageBox::Show("Access Granted", "Sign in successful", MessageBoxButtons::OK, MessageBoxIcon::Information);
+
 			Application::Exit();
 		}
 		//Show errors
@@ -374,6 +377,20 @@ private: System::Void MyForm_MouseUp(System::Object^ sender, System::Windows::Fo
 	//Disable dragging
 	dragging = false;
 
+}
+private: System::Void textBox1_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
+	if (e->KeyValue == (int)Keys::Enter)
+	{
+		textBox2->Focus(); 
+	}
+}
+
+
+private: System::Void textBox2_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
+	if (e->KeyValue == (int)Keys::Enter)
+	{
+		button1->PerformClick();
+	}
 }
 };
 }
