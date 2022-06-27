@@ -330,7 +330,7 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	//Exit the program if we use the admin account
 	if (textBox1->Text == "admin")
 	{
-		if (textBox2->Text == "0000")
+		if (textBox2->Text == "adminpass")
 		{
 			MessageBox::Show("Access Granted", "Sign in successful", MessageBoxButtons::OK, MessageBoxIcon::Information);
 
