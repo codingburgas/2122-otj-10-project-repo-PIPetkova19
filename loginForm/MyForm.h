@@ -224,7 +224,8 @@ namespace loginForm {
 			this->pnlTerms->Controls->Add(this->button3);
 			this->pnlTerms->Controls->Add(this->textBox3);
 			this->pnlTerms->Controls->Add(this->label5);
-			this->pnlTerms->Location = System::Drawing::Point(417, 33);
+			this->pnlTerms->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->pnlTerms->Location = System::Drawing::Point(0, 0);
 			this->pnlTerms->Name = L"pnlTerms";
 			this->pnlTerms->Size = System::Drawing::Size(727, 474);
 			this->pnlTerms->TabIndex = 11;
