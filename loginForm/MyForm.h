@@ -334,7 +334,6 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 		if (textBox2->Text == "adminpass")
 		{
 			MessageBox::Show("Access Granted", "Sign in successful", MessageBoxButtons::OK, MessageBoxIcon::Information);
-
 			Application::Exit();
 		}
 		//Show errors
@@ -343,8 +342,8 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 		}
 	}
 
-	else {
-		MessageBox::Show("Incorrect Username", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+	else if ((textBox1->Text != "") && (textBox2->Text != "")) {
+		MessageBox::Show("Sign in", "Sign in successful", MessageBoxButtons::OK, MessageBoxIcon::Information);
 	}
 }
 private: System::Void textBox2_TextChanged(System::Object^ sender, System::EventArgs^ e) {
