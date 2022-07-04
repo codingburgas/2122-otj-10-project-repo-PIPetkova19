@@ -117,7 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="textBox3.Text" xml:space="preserve">
+  <data name="textBoxTerms.Text" xml:space="preserve">
     <value>You agree that you are permitted to use the Services under applicable law. If you are using the Services on behalf of a company, business or other entity, you represent that you have the legal authority to accept these Terms on behalf of that entity, in which case that entity accepts these Terms, and ‘you’ means that entity. If you are accessing an account on behalf of the account owner (e.g. as an administrator, consultant, analyst etc.), the Terms apply to your activities on behalf of the account owner</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
