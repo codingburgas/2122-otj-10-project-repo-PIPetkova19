@@ -8,6 +8,7 @@ namespace loginForm {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace System::IO;
 
 	/// <summary>
 	/// Summary for MyForm
@@ -326,15 +327,22 @@ private: System::Void checkBox1_CheckedChanged(System::Object^ sender, System::E
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 	//Close the program when the button is clicked
 	Application::Exit();
-}
+}	
+
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-	//Exit the program if we use the admin account
+	String^ username = textBox1->Text;
+	StreamWriter^ output_file = File::AppendText("data.txt");
+
+	//Exit the program if we use the admin account		
 	if (textBox1->Text == "admin")
 	{
+		
+
 		if (textBox2->Text == "adminpass")
 		{
 			MessageBox::Show("Access Granted", "Sign in successful", MessageBoxButtons::OK, MessageBoxIcon::Information);
-			Application::Exit();
+			output_file->WriteLine(username);
+			output_file->Close();
 		}
 		//Show errors
 		else {
@@ -343,7 +351,10 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	}
 
 	else if ((textBox1->Text != "") && (textBox2->Text != "")) {
-		MessageBox::Show("Sign in", "Sign in successful", MessageBoxButtons::OK, MessageBoxIcon::Information);
+		MessageBox::Show("Sign in successful", "Sign in", MessageBoxButtons::OK, MessageBoxIcon::Information);
+		//Save usernames in text file
+		output_file->WriteLine(username);
+		output_file->Close();
 	}
 }
 private: System::Void textBox2_TextChanged(System::Object^ sender, System::EventArgs^ e) {
