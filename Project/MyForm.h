@@ -38,8 +38,8 @@ namespace loginForm {
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Label^ label3;
 	private: System::Windows::Forms::TextBox^ textBox1;
-	private: System::Windows::Forms::Panel^ panel1;
-	private: System::Windows::Forms::Panel^ panel2;
+
+
 	private: System::Windows::Forms::TextBox^ textBox2;
 	private: System::Windows::Forms::CheckBox^ checkBox1;
 	private: System::Windows::Forms::Label^ label4;
@@ -68,8 +68,6 @@ namespace loginForm {
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			this->panel1 = (gcnew System::Windows::Forms::Panel());
-			this->panel2 = (gcnew System::Windows::Forms::Panel());
 			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 			this->checkBox1 = (gcnew System::Windows::Forms::CheckBox());
 			this->label4 = (gcnew System::Windows::Forms::Label());
@@ -90,19 +88,19 @@ namespace loginForm {
 			this->label1->ForeColor = System::Drawing::Color::White;
 			this->label1->Location = System::Drawing::Point(44, 33);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(136, 51);
+			this->label1->Size = System::Drawing::Size(222, 51);
 			this->label1->TabIndex = 0;
-			this->label1->Text = L"Sign in";
+			this->label1->Text = L"Registration";
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
 			this->label2->BackColor = System::Drawing::Color::Transparent;
-			this->label2->Font = (gcnew System::Drawing::Font(L"Segoe UI", 8.25F));
+			this->label2->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10, System::Drawing::FontStyle::Bold));
 			this->label2->ForeColor = System::Drawing::Color::White;
 			this->label2->Location = System::Drawing::Point(50, 138);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(58, 13);
+			this->label2->Size = System::Drawing::Size(76, 19);
 			this->label2->TabIndex = 1;
 			this->label2->Text = L"Username";
 			// 
@@ -110,51 +108,35 @@ namespace loginForm {
 			// 
 			this->label3->AutoSize = true;
 			this->label3->BackColor = System::Drawing::Color::Transparent;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Segoe UI", 8.25F));
+			this->label3->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10, System::Drawing::FontStyle::Bold));
 			this->label3->ForeColor = System::Drawing::Color::White;
 			this->label3->Location = System::Drawing::Point(50, 227);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(56, 13);
+			this->label3->Size = System::Drawing::Size(73, 19);
 			this->label3->TabIndex = 2;
 			this->label3->Text = L"Password";
 			// 
 			// textBox1
 			// 
-			this->textBox1->BackColor = System::Drawing::Color::Black;
-			this->textBox1->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->textBox1->BackColor = System::Drawing::Color::Gainsboro;
 			this->textBox1->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.25F));
-			this->textBox1->ForeColor = System::Drawing::Color::White;
+			this->textBox1->ForeColor = System::Drawing::Color::Black;
 			this->textBox1->Location = System::Drawing::Point(53, 164);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(252, 19);
+			this->textBox1->Size = System::Drawing::Size(252, 26);
 			this->textBox1->TabIndex = 3;
 			this->textBox1->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox1_TextChanged);
 			this->textBox1->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &MyForm::textBox1_KeyDown);
 			// 
-			// panel1
-			// 
-			this->panel1->Location = System::Drawing::Point(56, 189);
-			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(249, 2);
-			this->panel1->TabIndex = 4;
-			// 
-			// panel2
-			// 
-			this->panel2->Location = System::Drawing::Point(56, 278);
-			this->panel2->Name = L"panel2";
-			this->panel2->Size = System::Drawing::Size(249, 2);
-			this->panel2->TabIndex = 6;
-			// 
 			// textBox2
 			// 
-			this->textBox2->BackColor = System::Drawing::Color::Black;
-			this->textBox2->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->textBox2->BackColor = System::Drawing::Color::Gainsboro;
 			this->textBox2->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.25F));
-			this->textBox2->ForeColor = System::Drawing::Color::White;
+			this->textBox2->ForeColor = System::Drawing::Color::Black;
 			this->textBox2->Location = System::Drawing::Point(53, 253);
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->PasswordChar = '*';
-			this->textBox2->Size = System::Drawing::Size(252, 19);
+			this->textBox2->Size = System::Drawing::Size(252, 26);
 			this->textBox2->TabIndex = 5;
 			this->textBox2->UseSystemPasswordChar = true;
 			this->textBox2->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox2_TextChanged);
@@ -166,11 +148,11 @@ namespace loginForm {
 			this->checkBox1->BackColor = System::Drawing::Color::Transparent;
 			this->checkBox1->Checked = true;
 			this->checkBox1->CheckState = System::Windows::Forms::CheckState::Checked;
-			this->checkBox1->Font = (gcnew System::Drawing::Font(L"Segoe UI", 8.25F));
+			this->checkBox1->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10));
 			this->checkBox1->ForeColor = System::Drawing::Color::White;
 			this->checkBox1->Location = System::Drawing::Point(56, 325);
 			this->checkBox1->Name = L"checkBox1";
-			this->checkBox1->Size = System::Drawing::Size(98, 17);
+			this->checkBox1->Size = System::Drawing::Size(115, 23);
 			this->checkBox1->TabIndex = 7;
 			this->checkBox1->Text = L"I agree to the ";
 			this->checkBox1->UseVisualStyleBackColor = false;
@@ -181,18 +163,18 @@ namespace loginForm {
 			this->label4->AutoSize = true;
 			this->label4->BackColor = System::Drawing::Color::Transparent;
 			this->label4->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->label4->Font = (gcnew System::Drawing::Font(L"Segoe UI", 8.25F));
-			this->label4->ForeColor = System::Drawing::Color::Red;
-			this->label4->Location = System::Drawing::Point(151, 326);
+			this->label4->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10));
+			this->label4->ForeColor = System::Drawing::Color::Black;
+			this->label4->Location = System::Drawing::Point(163, 327);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(119, 13);
+			this->label4->Size = System::Drawing::Size(142, 19);
 			this->label4->TabIndex = 8;
 			this->label4->Text = L"Terms and Conditions";
 			this->label4->Click += gcnew System::EventHandler(this, &MyForm::label4_Click);
 			// 
 			// button1
 			// 
-			this->button1->BackColor = System::Drawing::Color::Red;
+			this->button1->BackColor = System::Drawing::Color::White;
 			this->button1->FlatAppearance->BorderSize = 0;
 			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button1->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.25F));
@@ -207,10 +189,10 @@ namespace loginForm {
 			// button2
 			// 
 			this->button2->BackColor = System::Drawing::Color::Transparent;
-			this->button2->FlatAppearance->BorderColor = System::Drawing::Color::Red;
+			this->button2->FlatAppearance->BorderColor = System::Drawing::Color::White;
 			this->button2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button2->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.25F));
-			this->button2->ForeColor = System::Drawing::Color::Red;
+			this->button2->ForeColor = System::Drawing::Color::White;
 			this->button2->Location = System::Drawing::Point(192, 372);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(113, 38);
@@ -221,7 +203,7 @@ namespace loginForm {
 			// 
 			// pnlTerms
 			// 
-			this->pnlTerms->BackColor = System::Drawing::Color::Black;
+			this->pnlTerms->BackColor = System::Drawing::Color::White;
 			this->pnlTerms->Controls->Add(this->button3);
 			this->pnlTerms->Controls->Add(this->textBox3);
 			this->pnlTerms->Controls->Add(this->label5);
@@ -236,10 +218,11 @@ namespace loginForm {
 			// 
 			// button3
 			// 
-			this->button3->BackColor = System::Drawing::Color::Red;
+			this->button3->BackColor = System::Drawing::Color::Black;
 			this->button3->FlatAppearance->BorderSize = 0;
 			this->button3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button3->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.25F));
+			this->button3->ForeColor = System::Drawing::Color::White;
 			this->button3->Location = System::Drawing::Point(450, 382);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(113, 38);
@@ -250,10 +233,10 @@ namespace loginForm {
 			// 
 			// textBox3
 			// 
-			this->textBox3->BackColor = System::Drawing::Color::Black;
+			this->textBox3->BackColor = System::Drawing::Color::White;
 			this->textBox3->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->textBox3->Font = (gcnew System::Drawing::Font(L"Segoe UI", 11.25F));
-			this->textBox3->ForeColor = System::Drawing::Color::White;
+			this->textBox3->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12.25F));
+			this->textBox3->ForeColor = System::Drawing::Color::Black;
 			this->textBox3->Location = System::Drawing::Point(53, 77);
 			this->textBox3->Multiline = true;
 			this->textBox3->Name = L"textBox3";
@@ -265,9 +248,9 @@ namespace loginForm {
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->BackColor = System::Drawing::Color::Black;
+			this->label5->BackColor = System::Drawing::Color::Transparent;
 			this->label5->Font = (gcnew System::Drawing::Font(L"Segoe UI", 16.25F));
-			this->label5->ForeColor = System::Drawing::Color::White;
+			this->label5->ForeColor = System::Drawing::Color::Black;
 			this->label5->Location = System::Drawing::Point(51, 33);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(222, 30);
@@ -284,9 +267,7 @@ namespace loginForm {
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->checkBox1);
-			this->Controls->Add(this->panel2);
 			this->Controls->Add(this->textBox2);
-			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);
